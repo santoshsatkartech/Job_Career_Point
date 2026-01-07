@@ -1,0 +1,80 @@
+/* ================= FOOTER ================= */
+.footer {
+  background: #111;
+  color: #ccc;
+  padding: 50px 0 20px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 30px;
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.footer h3,
+.footer h4 {
+  /* color: #fff; */
+  margin-bottom: 10px;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.foot-title {
+  color: #E9762B;
+}
+
+.footer p,
+.footer a {
+  font-size: 14px;
+  color: #ccc;
+}
+
+.footer a:hover {
+  color: #ff9800;
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer ul li {
+  margin-bottom: 8px;
+}
+
+.social-links a {
+  font-size: 22px;
+  margin-right: 10px;
+}
+
+.footer input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 4px;
+  border: none;
+}
+
+.subscribe-btn {
+  margin-top: 8px;
+  padding: 8px;
+  width: 100%;
+  background: #ff9800;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #333;
+  margin-top: 30px;
+  padding-top: 15px;
+  font-size: 13px;
+}
