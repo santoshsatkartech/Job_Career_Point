@@ -23,19 +23,18 @@ video {
 /* ================= HERO ================= */
 .hero {
   width: 100%;
+  overflow: hidden;
 }
 
-.hero-img {
-  width: 100%;
-  height: 120vh;
-  object-fit: cover;
+.hero-container {
+  background-image: url(./background/hero_img.jpg);
+  background-size: cover;
+  background-position: center;
 }
 
 .hero_collect {
-  position: absolute;
-  top: 150px;
-  left: 30px;
-  width: 80%;
+  padding: 100px 20px;
+  width: 100%;
   height: 100%;
 }
 
@@ -421,13 +420,14 @@ video {
 }
 
 @media (min-width: 768px) {
-  /* ================= HERO ================= */
-  .hero-img {
-    height: 100vh;
-  }
 
+  /* ================= HERO ================= */
   .hero-title {
     font-size: 45px;
+  }
+
+  .hero_collect {
+    padding: 120px 70px 75px;
   }
 
   .heading {
@@ -451,14 +451,10 @@ video {
   /* ================= job categories ================= */
 
   .section-title {
-    text-align: center;
     font-size: 40px;
-    font-weight: 700;
-    color: #1c1c1c;
   }
 
   .section-subtitle {
-    color: #404040;
     font-size: 20px;
   }
 
@@ -745,6 +741,9 @@ video {
 }
 
 @media (min-width: 992px) {
+  .hero_collect {
+    padding: 150px 90px 100px;
+  }
 
   .hero-title {
     font-size: 57px;
@@ -765,6 +764,9 @@ video {
     left: 58%;
   }
 
+  .hero_collect {
+    padding: 250px 150px;
+  }
   .categories-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
