@@ -14,11 +14,6 @@ const Home = () => {
     <>
       <section className="hero">
         <div className="hero-container">
-          <img
-            className="hero-img"
-            src="./background/hero_img.jpg"
-            alt="hero"
-          />
           <div className="hero_collect">
             <h3 className="hero-title">
               FIND YOUR <br />

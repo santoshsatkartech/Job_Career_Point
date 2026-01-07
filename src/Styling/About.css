@@ -19,20 +19,22 @@
 }
 
 .about-section {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 .about-section h2 {
   font-size: 28px;
   margin-bottom: 15px;
   color: #007bff;
+  font-weight: 700;
 }
 
 .about-section p {
-  font-size: 20px;
+  font-size: 16px;
   color: #2a2a2a;
+  margin-bottom: 0;
+  padding: 0 15px;
 
-  /* Justify specific message paragraphs */
   .founder-text .message {
     text-align: justify;
     text-justify: inter-word;
@@ -59,7 +61,6 @@
 /* Founder Section */
 .founder-section {
   padding: 40px 0;
-  background: linear-gradient(135deg, #f8f9fa, #eef2f7);
 }
 
 .founder-wrapper {
@@ -87,7 +88,6 @@
 
 .founder-image-box img {
   width: 100%;
-  /* max-height: 320px; */
   object-fit: cover;
   border-radius: 16px;
   box-shadow: 10px 15px 30px rgba(0, 0, 0, 0.45);
@@ -178,7 +178,6 @@
   }
 }
 
-
 /* Why Trust Us */
 .why-trust {
   display: grid;
@@ -189,23 +188,34 @@
 
 /* Cards */
 .about-card {
-  background: #ffffff;
+  background: linear-gradient(180deg, #f8f5f5 0%,
+      #8d8d8d 50%,
+      #3a3a3a 100%);
+  color: #fff;
   padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease;
+  border-radius: 20px;
+   box-shadow: 0px 10px 10px rgb(121, 123, 123);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 15px;
 }
 
 .about-card:hover {
   transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
 }
 
 .about-card h3 {
   margin-bottom: 10px;
-  color: #333;
+  color: #fff;
 }
 
 .about-card p {
   font-size: 15px;
-  color: #555;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+@media (min-width: 768px) {
+  .about-section {
+    padding: 0 25px;
+  }
 }
