@@ -1,0 +1,22 @@
+@charset 'utf-8';
+
+* {
+  margin: 0px;
+  paddong: 0px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+img,
+video {
+  object-fit: cover;
+}
+
