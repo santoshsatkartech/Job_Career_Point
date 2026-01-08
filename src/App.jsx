@@ -7,6 +7,7 @@ import Contact from './Pages/Contact';
 import Home from './Pages/Home';
 import Jobs from './Pages/Jobs';
 import Testimonials from './Pages/Testimonials';
+import UserForm from './Pages/UserForm';
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
         <Route path="/jobs" element={<Jobs />} />
         <Route path="/testimonials" element={<Testimonials />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/user-form" element={<UserForm />} />
       </Routes>
 
       <Footer />

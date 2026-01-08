@@ -11,26 +11,6 @@ const Footer = () => {
             Your trusted job placement and career guidance partner. We connect
             candidates with verified employers across India.
           </p>
-
-          <div className="social-links">
-            <a href="#" aria-label="Facebook">
-              <i className="bi bi-facebook"></i>
-            </a>
-            <a href="#" aria-label="Instagram">
-              <i className="bi bi-instagram"></i>
-            </a>
-            <a href="#" aria-label="LinkedIn">
-              <i className="bi bi-linkedin"></i>
-            </a>
-            <a
-              href="https://wa.me/918999112057?text=Hello%20this%20is%20in%20reference%20to%20your%20website%20i%20would%20to%20like%20you%20know%20a%20few%20thing"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="WhatsApp"
-            >
-              <i className="bi bi-whatsapp"></i>
-            </a>
-          </div>
         </div>
 
         {/* Map + Address */}
@@ -72,43 +52,32 @@ const Footer = () => {
             <li>
               <a href="/contact">Contact</a>
             </li>
-            <li>
-              <a href="/privacy-policy">Privacy Policy</a>
-            </li>
-            <li>
-              <a href="/terms">Terms & Conditions</a>
-            </li>
           </ul>
         </div>
 
         {/* Contact + Job Alerts */}
         <div className="footer-col">
-          <h3>Contact Us</h3>
-          <p>
-            <a href="tel:+918999112057">📞 +91 89991 12057</a>
-          </p>
-
-          <p>
+          <h3>Follow Us</h3>
+          <div className="social-links">
+            <a href="#" aria-label="Facebook">
+              <i className="bi bi-facebook"></i>
+            </a>
+            <a href="#" aria-label="Instagram">
+              <i className="bi bi-instagram"></i>
+            </a>
+            <a href="#" aria-label="LinkedIn">
+              <i className="bi bi-linkedin"></i>
+            </a>
             <a
               href="https://wa.me/918999112057?text=Hello%20this%20is%20in%20reference%20to%20your%20website%20i%20would%20to%20like%20you%20know%20a%20few%20thing"
               target="_blank"
               rel="noreferrer"
+              aria-label="WhatsApp"
             >
-              💬 WhatsApp Us
+              <i className="bi bi-whatsapp"></i>
             </a>
-          </p>
-
-          <p>
-            <a
-    href="https://mail.google.com/mail/?view=cm&fs=1&to=jobcarrerpoint23@gmail.com"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    ✉️ jobcareerpoint23@gmail.com
-  </a>
-          </p>
-
-          <p>🕘 Mon – Sat: 9:30 AM – 5:30 PM</p>
+          </div>
+          <p>Stay updated with the latest job openings and career tips.</p>
         </div>
       </div>
 

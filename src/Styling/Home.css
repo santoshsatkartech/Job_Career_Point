@@ -27,7 +27,7 @@ video {
 }
 
 .hero-container {
-  background-image: url(./background/hero_img.jpg);
+  background-image: url(/background/hero_img.jpg);
   background-size: cover;
   background-position: center;
 }
