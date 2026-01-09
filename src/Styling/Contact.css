@@ -246,7 +246,7 @@ img {
   position: relative;
   display: block;
   background: #ffffff;
-  padding: 100px 0 120px;
+  padding: 100px 0 0px;
 }
 
 .contact-address-area .sec-title-style1.max-width {
@@ -376,7 +376,7 @@ img {
   position: relative;
   display: block;
   background: #ffffff;
-  padding: 30px 20px ;
+  padding: 30px 20px;
   z-index: 3;
   border: 2px solid rgb(242, 169, 58);
   border-radius: 20px;
@@ -516,6 +516,52 @@ img {
 
 @media (min-width: 768px) {
   .contact-form {
-  padding: 80px 50px ;
+    padding: 80px 50px;
+  }
 }
+
+.contact-section {
+  text-align: center;
+  padding: 60px 20px;
+  color: rgb(0, 0, 0);
+}
+
+.contact-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.contact-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.contact-card {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 20px 30px;
+  border-radius: 15px;
+  color: rgb(56, 56, 56);
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.6);
+}
+
+.contact-card:hover {
+  background: rgba(255, 255, 255, 0.35);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-cards {
+    flex-direction: column;
+    gap: 15px;
+  }
 }
