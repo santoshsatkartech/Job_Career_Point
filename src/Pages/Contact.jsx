@@ -1,38 +1,33 @@
+import emailjs from '@emailjs/browser';
 import { useState } from 'react';
 import '../Styling/Contact.css';
 
 const Contact = () => {
-  const [status, setStatus] = useState(null);
+  const [status, setStatus] = useState('');
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setStatus('sending');
 
-    const form = e.target;
-    const fd = new FormData(form);
-    const payload = {
-      name: fd.get('name') || '',
-      phone: fd.get('phone') || fd.get('mobile') || '',
-      email: fd.get('email') || '',
-      qualification: fd.get('qualification') || '',
-      interestedRole: fd.get('role') || '',
-      message: fd.get('message') || '',
-    };
-
-    try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-      });
-
-      if (!res.ok) throw new Error('Failed to send');
-      setStatus('sent');
-      form.reset();
-    } catch (err) {
-      console.error(err);
-      setStatus('error');
-    }
+    // Send form via EmailJS
+    emailjs
+      .sendForm(
+        'service_bww6d2t', // replace with your EmailJS Service ID
+        'template_0dsw0jr', // replace with your EmailJS Template ID
+        e.target,
+        'Lp7ZVUYzy6CugnEcr' // replace with your EmailJS Public Key
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          setStatus('sent');
+          e.target.reset();
+        },
+        (error) => {
+          console.error(error.text);
+          setStatus('error');
+        }
+      );
   };
 
   return (
@@ -61,7 +56,6 @@ const Contact = () => {
           </div>
 
           <div className="contact-address-box row">
-            {/* Box 1 */}
             <div className="col-sm-4 single-contact-address-box text-center">
               <div className="icon-holder">
                 <span className="icon-clock-1" />
@@ -70,7 +64,6 @@ const Contact = () => {
               <h2>Mon – Sat: 9:30 AM – 6:30 PM</h2>
             </div>
 
-            {/* Box 2 */}
             <div className="col-sm-4 single-contact-address-box main-branch">
               <h3>Job Career Point</h3>
               <div className="inner">
@@ -97,8 +90,7 @@ const Contact = () => {
                     </div>
                     <div className="text">
                       <p>
-                        +91 8999112057 <br />
-                        jobcareerpoint23@gmail.com
+                        +91 8999112057 <br /> jobcareerpoint23@gmail.com
                       </p>
                     </div>
                   </li>
@@ -120,7 +112,6 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Box 3 */}
             <div className="col-sm-4 single-contact-address-box text-center">
               <div className="icon-holder">
                 <span className="icon-question-2" />
@@ -129,6 +120,27 @@ const Contact = () => {
               <h2>Jobs • Internships • Guidance</h2>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="contact-section">
+        <h2>Contact Numbers</h2>
+        <div className="contact-cards">
+          <a href="tel:9545304038" className="contact-card">
+            📞 9545304038
+          </a>
+          <a href="tel:9561305022" className="contact-card">
+            📞 9561305022
+          </a>
+          <a href="tel:9545514038" className="contact-card">
+            📞 9545514038
+          </a>
+          <a href="tel:9270449690" className="contact-card">
+            📞 9270449690
+          </a>
+          <a href="tel:7249677652" className="contact-card">
+            📞 7249677652
+          </a>
         </div>
       </section>
 

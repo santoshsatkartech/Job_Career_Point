@@ -73,7 +73,7 @@ const Navbar = () => {
               </NavLink>
             </li>
 
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <NavLink
                 onClick={handleNavLinkClick}
                 className="nav-link"
@@ -81,7 +81,7 @@ const Navbar = () => {
               >
                 TESTIMONIALS
               </NavLink>
-            </li>
+            </li> */}
 
             {/* Mobile Contact */}
             <li className="nav-item d-lg-none">
