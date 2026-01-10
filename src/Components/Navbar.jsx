@@ -73,16 +73,6 @@ const Navbar = () => {
               </NavLink>
             </li>
 
-            {/* <li className="nav-item">
-              <NavLink
-                onClick={handleNavLinkClick}
-                className="nav-link"
-                to="/testimonials"
-              >
-                TESTIMONIALS
-              </NavLink>
-            </li> */}
-
             {/* Mobile Contact */}
             <li className="nav-item d-lg-none">
               <NavLink
