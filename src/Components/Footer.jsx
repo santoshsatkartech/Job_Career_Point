@@ -62,7 +62,11 @@ const Footer = () => {
             <a href="#" aria-label="Facebook">
               <i className="bi bi-facebook"></i>
             </a>
-            <a href="#" aria-label="Instagram">
+            <a
+              href="https://nayanshivankarportfolio.netlify.app/"
+              target="_blank"
+              aria-label="Instagram"
+            >
               <i className="bi bi-instagram"></i>
             </a>
             <a href="#" aria-label="LinkedIn">
