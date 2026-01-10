@@ -59,17 +59,25 @@ const Footer = () => {
         <div className="footer-col">
           <h3>Follow Us</h3>
           <div className="social-links">
-            <a href="#" aria-label="Facebook">
+            <a
+              href="https://www.facebook.com/people/Job-Career-Point/61585488399707/?rdid=zUiB8uKUED80aKqf&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F14NRgYRg7bu%2F"
+              target="_blank"
+              aria-label="Facebook"
+            >
               <i className="bi bi-facebook"></i>
             </a>
             <a
-              href="https://nayanshivankarportfolio.netlify.app/"
+              href="https://www.instagram.com/job.career.point/?igsh=MWhvZTMzaGU0bjRkeA%3D%3D#"
               target="_blank"
               aria-label="Instagram"
             >
               <i className="bi bi-instagram"></i>
             </a>
-            <a href="#" aria-label="LinkedIn">
+            <a
+              href="https://www.linkedin.com/in/santosh-satkar-4065313a5/"
+              target="_blank"
+              aria-label="LinkedIn"
+            >
               <i className="bi bi-linkedin"></i>
             </a>
             <a
