@@ -21,8 +21,8 @@ const UserForm = () => {
     const whatsappNumber = '918999112057';
 
     const message = `
-*New Job Application*
----------------------
+*New Job Application From Website*
+==================================
 Name: ${formData.name}
 Mobile: ${formData.mobile}
 Email: ${formData.email || 'N/A'}
