@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react';
 import { Route, Routes } from 'react-router-dom';
 import Footer from './Components/Footer';
 import Navbar from './Components/Navbar';
@@ -25,6 +26,7 @@ const App = () => {
       </Routes>
 
       <Footer />
+      <Analytics />
     </>
   );
 };
