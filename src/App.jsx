@@ -1,4 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import Footer from './Components/Footer';
 import Navbar from './Components/Navbar';
 import ScrollToTop from './Components/ScrollToTop';
@@ -25,6 +26,7 @@ const App = () => {
       </Routes>
 
       <Footer />
+      <Analytics />
     </>
   );
 };
