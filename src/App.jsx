@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import Footer from './Components/Footer';
 import Navbar from './Components/Navbar';
-
+import ScrollToTop from './Components/ScrollToTop';
 import About from './Pages/About';
 import Contact from './Pages/Contact';
 import Home from './Pages/Home';
@@ -14,6 +14,7 @@ const App = () => {
     <>
       <Navbar />
 
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
