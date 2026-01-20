@@ -24,6 +24,16 @@
 
 .about-section h2 {
   font-size: 28px;
+  margin:35px 0;
+  color: #007bff;
+  font-weight: 700;
+  text-align: center;
+}
+
+.Slider_heading {
+  margin: 50px;
+  text-align: center;
+  font-size: 28px;
   margin-bottom: 15px;
   color: #007bff;
   font-weight: 700;
@@ -194,7 +204,7 @@
   color: #fff;
   padding: 25px;
   border-radius: 20px;
-   box-shadow: 0px 10px 10px rgb(121, 123, 123);
+  box-shadow: 0px 10px 10px rgb(121, 123, 123);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   margin-top: 15px;
 }
@@ -217,5 +227,86 @@
 @media (min-width: 768px) {
   .about-section {
     padding: 0 25px;
+  }
+}
+
+.slider {
+  padding: 12px;
+  margin: 30px 0;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  position: relative;
+  mask-image: linear-gradient(to right, transparent, #000 20%, #000 80%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 20%, #000 80%, transparent);
+}
+
+.list {
+  display: flex;
+  width: calc(var(--width) * var(--imageQuantity) * 2);
+  gap: calc(var(--width) / 4);
+  animation: autoScroll 20s linear infinite;
+}
+
+.list_2 {
+  display: flex;
+  width: calc(var(--width) * var(--imageQuantity) * 2);
+  gap: calc(var(--width) / 4);
+  animation: reverseScroll 20s linear infinite;
+}
+
+.list_3 {
+  display: flex;
+  width: calc(var(--width) * var(--imageQuantity) * 2);
+  gap: calc(var(--width) / 4);
+  animation: autoScroll 20s linear infinite;
+}
+
+.item {
+  width: var(--width);
+  height: var(--height);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  /* filter: grayscale(1); */
+  transition: transform 0.4s ease-in-out;
+}
+
+.item:hover img {
+  filter: grayscale(0);
+  transform: scale(1.5);
+}
+
+/* Normal Scroll */
+@keyframes autoScroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-1 * var(--width) * var(--imageQuantity)));
+  }
+}
+
+/* Reverse Scroll */
+.slider[data-reverse="true"] .list {
+  animation: reverseScroll 20s linear infinite;
+}
+
+@keyframes reverseScroll {
+  0% {
+    transform: translateX(calc(-1 * var(--width) * var(--imageQuantity)));
+  }
+
+  100% {
+    transform: translateX(0);
   }
 }

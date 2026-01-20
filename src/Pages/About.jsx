@@ -1,5 +1,20 @@
-import { motion } from 'framer-motion';
 import '../Styling/About.css';
+
+const logos = [
+  'bajaj.jpg',
+  'britannia.jpg',
+  'capgemini.jpg',
+  'cognizant.jpg',
+  'fiat.jpg',
+  'haier.jpg',
+  'hcl.png',
+  'ibm.jpg',
+  'infosys.jpg',
+  'itc.jpg',
+  'lg.jpg',
+  'tcs.jpg',
+  'wipro.jpg',
+];
 
 const About = () => {
   return (
@@ -44,7 +59,7 @@ const About = () => {
           </div>
         </section>
 
-        <section className="founder-section">
+        {/* <section className="founder-section">
           <motion.div
             className="founder-wrapper"
             initial={{ opacity: 0, y: 40 }}
@@ -52,12 +67,11 @@ const About = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            {/* Left: Image / Logo */}
+          
             <div className="founder-image-box">
               <img className='w-100' src="./illustration/owner.jpg" alt="Managing Director" />
             </div>
 
-            {/* Right: Details */}
             <div className="founder-text">
               <h2>Meet the Owner</h2>
               <h3>Mr. Santosh Satkar</h3>
@@ -96,7 +110,59 @@ const About = () => {
               </div>
             </div>
           </motion.div>
-        </section>
+        </section> */}
+
+        {/* Logo Slider */}
+        <h2 className="Slider_heading">Our Partners</h2>
+        <div
+          className="slider"
+          style={{
+            '--width': '150px',
+            '--height': '80px',
+            '--imageQuantity': logos.length,
+          }}
+        >
+          <div className="list">
+            {/* Original Logos */}
+            {logos.map((logo, index) => (
+              <div className="item" key={index}>
+                <img src={`/illustration/${logo}`} alt={`logo-${index}`} />
+              </div>
+            ))}
+
+            {/* Duplicate Logos for Seamless Loop */}
+            {logos.map((logo, index) => (
+              <div className="item" key={`dup-${index}`}>
+                <img src={`/illustration/${logo}`} alt={`logo-dup-${index}`} />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div
+          className="slider"
+          style={{
+            '--width': '150px',
+            '--height': '80px',
+            '--imageQuantity': logos.length,
+          }}
+        >
+          <div className="list_2">
+            {/* Original Logos */}
+            {logos.map((logo, index) => (
+              <div className="item" key={index}>
+                <img src={`/illustration/${logo}`} alt={`logo-${index}`} />
+              </div>
+            ))}
+
+            {/* Duplicate Logos for Seamless Loop */}
+            {logos.map((logo, index) => (
+              <div className="item" key={`dup-${index}`}>
+                <img src={`/illustration/${logo}`} alt={`logo-dup-${index}`} />
+              </div>
+            ))}
+          </div>
+        </div>
 
         {/* Build Trust */}
         <section className="about-section">
