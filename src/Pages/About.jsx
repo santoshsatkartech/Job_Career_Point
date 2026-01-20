@@ -21,7 +21,6 @@ const About = () => {
     <div className="about-page">
       <div className="about-container">
         <h1>About Us</h1>
-
         {/* Who We Are */}
         <section className="about-section">
           <p>
@@ -58,59 +57,6 @@ const About = () => {
             </div>
           </div>
         </section>
-
-        {/* <section className="founder-section">
-          <motion.div
-            className="founder-wrapper"
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-          
-            <div className="founder-image-box">
-              <img className='w-100' src="./illustration/owner.jpg" alt="Managing Director" />
-            </div>
-
-            <div className="founder-text">
-              <h2>Meet the Owner</h2>
-              <h3>Mr. Santosh Satkar</h3>
-              <p className="role">Managing Director (MD)</p>
-
-              <p className="message">
-                JobCareerPoint is managed with a strong focus on trust,
-                transparency, and genuine opportunities for job seekers. Our
-                goal is to create a reliable bridge between candidates and
-                employers.
-              </p>
-
-              <div className="owner-details">
-                <p>
-                  <strong>📞 Mobile:</strong> 9960008802
-                </p>
-                <p>
-                  <strong>📧 Email:</strong>{' '}
-                  <a
-                    href="https://mail.google.com/mail/?view=cm&fs=1&to=santoshsatkar2011@gmail.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    santoshsatkar2011@gmail.com
-                  </a>
-                </p>
-                <p>
-                  <strong>📍 Address:</strong>
-                  <br />
-                  Trimurti Complex, Nagar Road, Ranjangaon MIDC Karegaon
-                  <br />
-                  (Near Police Station)
-                  <br />
-                  Tal: Shirur, Dist: Pune – 412220
-                </p>
-              </div>
-            </div>
-          </motion.div>
-        </section> */}
 
         {/* Logo Slider */}
         <h2 className="Slider_heading">Our Partners</h2>
