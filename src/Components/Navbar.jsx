@@ -6,94 +6,81 @@ const Navbar = () => {
   const collapseRef = useRef(null);
   const togglerRef = useRef(null);
 
-  const handleNavLinkClick = () => {
-    const collapseEl = collapseRef.current;
-    const togglerEl = togglerRef.current;
-    if (collapseEl && collapseEl.classList.contains('show')) {
-      collapseEl.classList.remove('show');
-      if (togglerEl) {
-        togglerEl.classList.add('collapsed');
-        togglerEl.setAttribute('aria-expanded', 'false');
-      }
+  const handleNavClick = () => {
+    if (collapseRef.current?.classList.contains('show')) {
+      collapseRef.current.classList.remove('show');
+      togglerRef.current?.classList.add('collapsed');
+      togglerRef.current?.setAttribute('aria-expanded', 'false');
     }
   };
 
   return (
-    <nav className="navbar navbar-expand-lg w-100 justify-content-center">
-      <div className="container">
-        {/* Logo */}
+    <nav className="navbar navbar-expand-lg fixed-top justify-content-center">
+      <div className="container custom-navbar">
+        {/* LEFT – LOGO */}
         <NavLink className="navbar-brand" to="/">
-          <img src="/Logo_2.png" alt="Logo" />
+          <img src="./illustration/Logo_2.png" alt="Logo" />
         </NavLink>
 
-        {/* Toggler */}
+        {/* TOGGLER */}
         <button
           ref={togglerRef}
           className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
-          data-bs-target="#navbarNavDropdown"
-          aria-controls="navbarNavDropdown"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
+          data-bs-target="#mainNavbar"
         >
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        {/* Menu */}
+        {/* CENTER + RIGHT */}
         <div
           ref={collapseRef}
-          className="collapse navbar-collapse mobile-center-menu"
-          id="navbarNavDropdown"
+          className="collapse navbar-collapse"
+          id="mainNavbar"
         >
-          <ul className="navbar-nav ms-auto align-items-lg-center text-center">
+          {/* CENTER MENU */}
+          <ul className="navbar-nav mx-auto nav-center text-center">
             <li className="nav-item">
-              <NavLink onClick={handleNavLinkClick} className="nav-link" to="/">
+              <NavLink onClick={handleNavClick} className="nav-link" to="/">
                 HOME
               </NavLink>
             </li>
-
             <li className="nav-item">
               <NavLink
-                onClick={handleNavLinkClick}
+                onClick={handleNavClick}
                 className="nav-link"
                 to="/about"
               >
                 ABOUT
               </NavLink>
             </li>
-
             <li className="nav-item">
-              <NavLink
-                onClick={handleNavLinkClick}
-                className="nav-link"
-                to="/jobs"
-              >
+              <NavLink onClick={handleNavClick} className="nav-link" to="/jobs">
                 JOBS
               </NavLink>
             </li>
-
-            {/* Mobile Contact */}
-            <li className="nav-item d-lg-none">
+            <li className="nav-item">
               <NavLink
-                onClick={handleNavLinkClick}
-                className="nav-link nav-contact"
+                onClick={handleNavClick}
+                className="nav-link"
                 to="/contact"
               >
-                CONTACT US
+                CONTACT
               </NavLink>
             </li>
           </ul>
-        </div>
 
-        {/* Desktop Contact */}
-        <ul className="navbar-nav d-none d-lg-flex">
-          <li className="nav-item">
-            <NavLink className="nav-link nav-contact" to="/contact">
-              CONTACT US
+          {/* RIGHT BUTTONS */}
+          <div className="nav-actions ms-lg-auto text-center">
+            <a href="tel:9876543210" className="btn btn-call">
+              CALL NOW
+            </a>
+            <NavLink to="/jobs" className="btn btn-jobs">
+              VIEW JOBS
             </NavLink>
-          </li>
-        </ul>
+          </div>
+        </div>
       </div>
     </nav>
   );

@@ -1,32 +1,172 @@
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import Particles from '../Components/Particles';
 import '../Styling/Home.css';
 
 const Home = () => {
+  useEffect(() => {
+    const section = document.querySelector('.why-choose');
+    const counters = document.querySelectorAll('.counter');
+    const reveals = document.querySelectorAll('.reveal');
+
+    let started = false;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !started) {
+            started = true;
+
+            counters.forEach((counter) => {
+              const target = +counter.dataset.target;
+
+              const update = () => {
+                const current = +counter.innerText;
+                const increment = target / 80;
+
+                if (current < target) {
+                  counter.innerText = Math.ceil(current + increment);
+                  requestAnimationFrame(update);
+                } else {
+                  counter.innerText = target.toLocaleString() + '+';
+                }
+              };
+              update();
+            });
+
+            reveals.forEach((el) => el.classList.add('active'));
+          }
+        });
+      },
+      { threshold: 0.35 }
+    );
+
+    observer.observe(section);
+  }, []);
+
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const faqs = [
+    {
+      q: 'Is Job Career Point genuine?',
+      a: 'Yes, we provide verified and genuine job opportunities.',
+    },
+    {
+      q: 'Do you provide jobs for freshers?',
+      a: 'Yes, we offer jobs for both freshers and experienced candidates.',
+    },
+    {
+      q: 'How long does placement take?',
+      a: 'Placement time depends on your profile and job availability.',
+    },
+    {
+      q: 'How can I apply for a job?',
+      a: 'You can call or WhatsApp us directly to apply.',
+    },
+
+    {
+      q: 'Which locations do you provide jobs in?',
+      a: 'We provide opportunities across multiple cities depending on employer availability.',
+    },
+    {
+      q: 'Will you help with interview preparation?',
+      a: 'Yes, we guide candidates with interview tips and preparation support.',
+    },
+  ];
+
+  const toggle = (index) => {
+    if (activeIndex === index) {
+      setActiveIndex(null); // close if same clicked
+    } else {
+      setActiveIndex(index);
+    }
+  };
+
   const categories = [
-    { title: 'IT & Software', count: '320+ Jobs', icon: '💻' },
-    { title: 'Marketing', count: '210+ Jobs', icon: '📈' },
-    { title: 'Finance', count: '180+ Jobs', icon: '💰' },
-    { title: 'Healthcare', count: '150+ Jobs', icon: '🏥' },
-    { title: 'Education', count: '120+ Jobs', icon: '🎓' },
-    { title: 'Manufacturing', count: '95+ Jobs', icon: '🏭' },
+    {
+      title: 'IT & Software',
+      count: '342 Jobs',
+      icon: '💻',
+      desc: 'Developer, QA, DevOps & software roles',
+    },
+    {
+      title: 'Digital Marketing',
+      count: '218 Jobs',
+      icon: '📈',
+      desc: 'SEO, social media & performance marketing',
+    },
+    {
+      title: 'Finance & Accounting',
+      count: '186 Jobs',
+      icon: '💰',
+      desc: 'Accounts, audit, banking & finance roles',
+    },
+    {
+      title: 'Healthcare & Pharma',
+      count: '154 Jobs',
+      icon: '🏥',
+      desc: 'Medical, pharma & healthcare services',
+    },
+    {
+      title: 'Education & Training',
+      count: '129 Jobs',
+      icon: '🎓',
+      desc: 'Teaching, trainers & academic roles',
+    },
+    {
+      title: 'Manufacturing',
+      count: '97 Jobs',
+      icon: '🏭',
+      desc: 'Factory, production & quality jobs',
+    },
+    {
+      title: 'Sales & Business Dev',
+      count: '204 Jobs',
+      icon: '🤝',
+      desc: 'Sales, growth & client management',
+    },
+    {
+      title: 'HR & Recruitment',
+      count: '88 Jobs',
+      icon: '🧑‍💼',
+      desc: 'Hiring, payroll & people operations',
+    },
   ];
 
   return (
     <>
       <section className="hero">
+        <Particles />
         <div className="hero-container">
-          <div className="hero_collect">
+          <img
+            src="./background/search.png"
+            alt="hero_bg"
+            className="Hero_bg"
+            data-aos="zoom-in-left"
+          />
+          <img
+            src="./background/circle.png"
+            alt="hero_bg"
+            className="Hero_bg_mo"
+            data-aos="zoom-in-left"
+          />
+          <div
+            className="hero_collect "
+            data-aos="zoom-in-up"
+            data-aos-duration="1500"
+          >
             <h3 className="hero-title">
               FIND YOUR <br />
               DREAM JOB
             </h3>
             <h1 className="heading">JOB CAREER POINT</h1>
-            <p className="caption">Your Career Start Here.</p>
+            <p className="caption">Easiest way to find a perfect job.</p>
             <p className="caption">
               Your Trusted Partner In Job Placement And Career Growth.
             </p>
 
             <div className="hero-buttons">
-              <a href="tel:+918999112057" className="btn call-btn">
+              <a href="tel:+918999112057" className="btn call-btn d-lg-none">
                 📞 Call Now
               </a>
 
@@ -34,12 +174,12 @@ const Home = () => {
                 href="https://wa.me/918999112057?text=Hello%20this%20is%20in%20reference%20to%20your%20website%20i%20would%20to%20like%20you%20know%20a%20few%20thing"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn whatsapp-btn"
+                className="btn whatsapp-btn d-lg-none"
               >
                 <i className="bi bi-whatsapp"></i> &nbsp; WhatsApp Us
               </a>
 
-              <a href="/jobs" className="btn job-btn">
+              <a href="/jobs" className="btn job-btn d-lg-none">
                 🔍 View Jobs
               </a>
             </div>
@@ -47,33 +187,45 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="highlights">
-        <div className="home-card">
-          <h2>1000+ Candidates placed</h2>
+      <section className="highlights row d-flex  g-0 justify-content-center">
+        <div className="home-card col-12 col-md-4" data-aos="zoom-in-up">
+          <h2>2000+ Candidates placed</h2>
         </div>
-        <div className="home-card">
+        <div className="home-card col-12 col-md-4" data-aos="zoom-in-up">
           <h2>Trusted Placement Consultancy</h2>
         </div>
-        <div className="home-card">
+        <div className="home-card col-12 col-md-4" data-aos="zoom-in-up">
           <h2>Fresher and Experienced Jobs</h2>
         </div>
       </section>
 
       <section className="job-categories">
         <div className="container">
-          <h2 className="section-title">Job Categories</h2>
+          <h2 className="section-title">
+            <span>1000+</span> Active Jobs
+          </h2>
+          <h2 className="section-title">Browse From Our Top Categories</h2>
+
           <p className="section-subtitle">
-            Explore jobs by category and find the right opportunity
+            Explore verified jobs across multiple industries
           </p>
 
-          <div className="categories-grid">
-            {categories.map((cat, index) => (
-              <div className="category-card" key={index}>
-                <div className="category-icon">{cat.icon}</div>
-                <h3>{cat.title}</h3>
-                <span>{cat.count}</span>
-              </div>
-            ))}
+          {/* Infinite Scroll Wrapper */}
+          <div className="categories-scroll-wrapper">
+            <div className="categories-scroll-track">
+              {[...categories, ...categories].map((cat, index) => (
+                <div className="category-card" key={index}>
+                  <div className="category-icon">{cat.icon}</div>
+                  <h3>{cat.title}</h3>
+                  <p className="category-desc">{cat.desc}</p>
+                  <span>{cat.count}</span>
+                  <br />
+                  <Link to="/jobs" className="btn job-card-btn">
+                    View Jobs
+                  </Link>
+                </div>
+              ))}
+            </div>
           </div>
 
           <div className="category-btn">
@@ -116,16 +268,24 @@ const Home = () => {
 
           {/* Right Highlights */}
           <div className="why-right">
-            <div className="highlight">
-              <h3>5K+</h3>
+            <div className="highlight reveal">
+              <h3 className="counter" data-target="1000">
+                0
+              </h3>
               <span>Jobs Posted</span>
             </div>
-            <div className="highlight">
-              <h3>10K+</h3>
+
+            <div className="highlight reveal">
+              <h3 className="counter" data-target="2000">
+                0
+              </h3>
               <span>Happy Candidates</span>
             </div>
-            <div className="highlight">
-              <h3>500+</h3>
+
+            <div className="highlight reveal">
+              <h3 className="counter" data-target="100">
+                0
+              </h3>
               <span>Partner Companies</span>
             </div>
           </div>
@@ -172,29 +332,21 @@ const Home = () => {
           <h2 className="section-title">Frequently Asked Questions</h2>
 
           <div className="faq-list">
-            <div className="faq-item">
-              <h4>Is Job Career Point genuine?</h4>
-              <p>Yes, we provide verified and genuine job opportunities.</p>
-            </div>
+            {faqs.map((item, index) => (
+              <div
+                key={index}
+                className={`faq-item ${activeIndex === index ? 'active' : ''}`}
+              >
+                <div className="faq-question" onClick={() => toggle(index)}>
+                  <h4>{item.q}</h4>
+                  <span>{activeIndex === index ? '-' : '+'}</span>
+                </div>
 
-            <div className="faq-item">
-              <h4>Do you provide jobs for freshers?</h4>
-              <p>
-                Yes, we offer jobs for both freshers and experienced candidates.
-              </p>
-            </div>
-
-            <div className="faq-item">
-              <h4>How long does placement take?</h4>
-              <p>
-                Placement time depends on your profile and job availability.
-              </p>
-            </div>
-
-            <div className="faq-item">
-              <h4>How can I apply for a job?</h4>
-              <p>You can call or WhatsApp us directly to apply.</p>
-            </div>
+                <div className="faq-answer">
+                  <p>{item.a}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

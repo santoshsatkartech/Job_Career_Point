@@ -74,13 +74,6 @@ const Footer = () => {
               <i className="bi bi-instagram"></i>
             </a>
             <a
-              href="https://www.linkedin.com/in/santosh-satkar-4065313a5/"
-              target="_blank"
-              aria-label="LinkedIn"
-            >
-              <i className="bi bi-linkedin"></i>
-            </a>
-            <a
               href="https://wa.me/918999112057?text=Hello%20this%20is%20in%20reference%20to%20your%20website%20i%20would%20to%20like%20you%20know%20a%20few%20thing"
               target="_blank"
               rel="noreferrer"

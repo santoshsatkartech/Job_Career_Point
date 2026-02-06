@@ -1,4 +1,6 @@
 import { Analytics } from '@vercel/analytics/react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { Route, Routes } from 'react-router-dom';
 import Footer from './Components/Footer';
 import Navbar from './Components/Navbar';
@@ -11,6 +13,7 @@ import Testimonials from './Pages/Testimonials';
 import UserForm from './Pages/UserForm';
 
 const App = () => {
+  AOS.init();
   return (
     <>
       <Navbar />
