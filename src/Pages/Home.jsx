@@ -269,14 +269,14 @@ const Home = () => {
           {/* Right Highlights */}
           <div className="why-right">
             <div className="highlight reveal">
-              <h3 className="counter" data-target="1,000">
+              <h3 className="counter" data-target="1000">
                 0
               </h3>
               <span>Jobs Posted</span>
             </div>
 
             <div className="highlight reveal">
-              <h3 className="counter" data-target="7,000">
+              <h3 className="counter" data-target="7000">
                 0
               </h3>
               <span>Happy Candidates</span>
