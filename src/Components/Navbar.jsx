@@ -73,7 +73,7 @@ const Navbar = () => {
 
           {/* RIGHT BUTTONS */}
           <div className="nav-actions ms-lg-auto text-center">
-            <a href="tel:9876543210" className="btn btn-call">
+            <a href="tel:8999112057" className="btn btn-call">
               CALL NOW
             </a>
             <NavLink to="/jobs" className="btn btn-jobs">

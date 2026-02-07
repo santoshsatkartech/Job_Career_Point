@@ -189,7 +189,7 @@ const Home = () => {
 
       <section className="highlights row d-flex  g-0 justify-content-center">
         <div className="home-card col-12 col-md-4" data-aos="zoom-in-up">
-          <h2>2000+ Candidates placed</h2>
+          <h2>7,000+ Candidates placed</h2>
         </div>
         <div className="home-card col-12 col-md-4" data-aos="zoom-in-up">
           <h2>Trusted Placement Consultancy</h2>
@@ -269,14 +269,14 @@ const Home = () => {
           {/* Right Highlights */}
           <div className="why-right">
             <div className="highlight reveal">
-              <h3 className="counter" data-target="1000">
+              <h3 className="counter" data-target="1,000">
                 0
               </h3>
               <span>Jobs Posted</span>
             </div>
 
             <div className="highlight reveal">
-              <h3 className="counter" data-target="2000">
+              <h3 className="counter" data-target="7,000">
                 0
               </h3>
               <span>Happy Candidates</span>

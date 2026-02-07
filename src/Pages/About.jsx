@@ -19,136 +19,301 @@ const logos = [
 const About = () => {
   return (
     <div className="about-page">
+      {/* Hero Section */}
+      <div className="about-hero">
+        <div className="hero-overlay">
+          <h1>Connecting Talent with Opportunity</h1>
+          <p className="hero-subtitle">
+            Your trusted partner in career advancement since 2010
+          </p>
+        </div>
+      </div>
+
       <div className="about-container">
-        <h1>About Us</h1>
         {/* Who We Are */}
         <section className="about-section">
-          <p>
-            We are Best Job consultancy we been working as placement agency all
-            types of jobs as placement consultant we have successfully placed
-            many candidates over the years, we provide our own job site or job
-            portal for job recruitment, we have highly qualified staff and we
-            follow all government compliances we have no attrition as off date
-            and we don't have any obligation from any client or candidate. we
-            believe in Ethical business
-          </p>
+          <div className="section-header">
+            <h2 className="section-title">Who We Are</h2>
+            <div className="title-underline"></div>
+          </div>
+          <div className="content-wrapper">
+            <div className="about-text">
+              <p>
+                <strong>JobCareerPoint</strong> is a premier recruitment
+                consultancy with over a decade of excellence in the staffing
+                industry. We specialize in bridging the gap between exceptional
+                talent and top-tier companies across diverse sectors.
+              </p>
+              <p>
+                Our journey began with a simple vision: to transform the way
+                recruitment works in India. Today, we stand as one of the most
+                reliable placement agencies, having successfully placed
+                <span className="highlight-text"> 2,000+ candidates </span>
+                in reputed organizations nationwide.
+              </p>
+              <div className="stats-container">
+                <div className="stat-item">
+                  <h3>7,000+</h3>
+                  <p>Candidates Placed</p>
+                </div>
+                <div className="stat-item">
+                  <h3>100+</h3>
+                  <p>Partner Companies</p>
+                </div>
+                <div className="stat-item">
+                  <h3>85%</h3>
+                  <p>Retention Rate</p>
+                </div>
+                <div className="stat-item">
+                  <h3>14 Years</h3>
+                  <p>Industry Experience</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
 
         {/* Mission & Vision */}
-        <section className="about-section">
-          <h2>Our Mission & Vision</h2>
+        <section className="about-section mission-section">
+          <div className="section-header">
+            <h2 className="section-title">Our Mission & Vision</h2>
+            <div className="title-underline"></div>
+          </div>
           <div className="mission-vision">
-            <div className="about-card">
-              <h3>🎯 Our Mission</h3>
+            <div className="about-card mission-card">
+              <h3>Our Mission</h3>
               <p>
-                We are a professional, enthusiastic and innovative team.
-                dedicated to providing professional Consulting Services and
-                evolving Recruitment Solutions that help our customers become
-                more productive and profitable.
+                To revolutionize the recruitment industry by providing
+                innovative, efficient, and ethical staffing solutions that
+                empower both candidates and employers to achieve their
+                professional goals.
               </p>
+              <ul className="mission-list">
+                <li>Provide professional consulting services</li>
+                <li>Offer evolving recruitment solutions</li>
+                <li>Enhance productivity and profitability</li>
+                <li>Ensure ethical business practices</li>
+              </ul>
             </div>
 
-            <div className="about-card">
-              <h3>👁️ Our Vision</h3>
+            <div className="about-card vision-card">
+              <h3>Our Vision</h3>
               <p>
-                To be recognized as an impactful, innovative and efficient
-                Consulting partner.
+                To be recognized as India's most impactful and innovative
+                recruitment partner, setting new benchmarks in talent
+                acquisition and career development.
               </p>
+              <ul className="vision-list">
+                <li>Industry leadership in recruitment solutions</li>
+                <li>Global recognition as a trusted partner</li>
+                <li>Technological innovation in staffing</li>
+                <li>Sustainable growth and social impact</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* Our Values */}
+        <section className="about-section values-section">
+          <div className="section-header">
+            <h2 className="section-title">Our Core Values</h2>
+            <div className="title-underline"></div>
+          </div>
+          <div className="values-grid">
+            <div className="value-card">
+              <div className="value-icon">🤝</div>
+              <h3>Integrity</h3>
+              <p>Transparent and honest in all our dealings</p>
+            </div>
+            <div className="value-card">
+              <div className="value-icon">⚡</div>
+              <h3>Efficiency</h3>
+              <p>Quick and effective recruitment solutions</p>
+            </div>
+            <div className="value-card">
+              <div className="value-icon">❤️</div>
+              <h3>Empathy</h3>
+              <p>Understanding candidate and client needs</p>
+            </div>
+            <div className="value-card">
+              <div className="value-icon">🚀</div>
+              <h3>Innovation</h3>
+              <p>Constantly evolving our processes</p>
             </div>
           </div>
         </section>
 
         {/* Logo Slider */}
-        <h2 className="Slider_heading">Our Partners</h2>
-        <div
-          className="slider"
-          style={{
-            '--width': '150px',
-            '--height': '80px',
-            '--imageQuantity': logos.length,
-          }}
-        >
-          <div className="list">
-            {/* Original Logos */}
-            {logos.map((logo, index) => (
-              <div className="item" key={index}>
-                <img src={`/illustration/${logo}`} alt={`logo-${index}`} />
-              </div>
-            ))}
-
-            {/* Duplicate Logos for Seamless Loop */}
-            {logos.map((logo, index) => (
-              <div className="item" key={`dup-${index}`}>
-                <img src={`/illustration/${logo}`} alt={`logo-dup-${index}`} />
-              </div>
-            ))}
+        <section className="about-section partners-section">
+          <div className="section-header">
+            <h2 className="section-title">Our Esteemed Partners</h2>
+            <div className="title-underline"></div>
+            <p className="section-subtitle">
+              Trusted by India's leading companies across industries
+            </p>
           </div>
-        </div>
 
-        <div
-          className="slider"
-          style={{
-            '--width': '150px',
-            '--height': '80px',
-            '--imageQuantity': logos.length,
-          }}
-        >
-          <div className="list_2">
-            {/* Original Logos */}
-            {logos.map((logo, index) => (
-              <div className="item" key={index}>
-                <img src={`/illustration/${logo}`} alt={`logo-${index}`} />
+          <div className="slider-container">
+            <div className="slider">
+              <div className="slider-track">
+                {logos.concat(logos).map((logo, index) => (
+                  <div className="slider-item" key={index}>
+                    <div className="logo-container">
+                      <img
+                        src={`/illustration/${logo}`}
+                        alt={`partner-logo-${index}`}
+                        className="partner-logo"
+                      />
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
-
-            {/* Duplicate Logos for Seamless Loop */}
-            {logos.map((logo, index) => (
-              <div className="item" key={`dup-${index}`}>
-                <img src={`/illustration/${logo}`} alt={`logo-dup-${index}`} />
-              </div>
-            ))}
+            </div>
           </div>
-        </div>
+        </section>
+
+        {/* Our Process */}
+        {/* <section className="about-section process-section">
+          <div className="section-header">
+            <h2 className="section-title">Our Recruitment Process</h2>
+            <div className="title-underline"></div>
+          </div>
+          <div className="process-steps">
+            <div className="step">
+              <div className="step-number">1</div>
+              <h3>Profile Assessment</h3>
+              <p>Comprehensive evaluation of skills and experience</p>
+            </div>
+            <div className="step">
+              <div className="step-number">2</div>
+              <h3>Career Counseling</h3>
+              <p>Personalized guidance for career growth</p>
+            </div>
+            <div className="step">
+              <div className="step-number">3</div>
+              <h3>Job Matching</h3>
+              <p>Smart matching with suitable opportunities</p>
+            </div>
+            <div className="step">
+              <div className="step-number">4</div>
+              <h3>Interview Prep</h3>
+              <p>Comprehensive interview training</p>
+            </div>
+            <div className="step">
+              <div className="step-number">5</div>
+              <h3>Placement</h3>
+              <p>Successful onboarding and follow-up</p>
+            </div>
+          </div>
+        </section> */}
 
         {/* Build Trust */}
-        <section className="about-section">
-          <h2>Building Trust & Credibility</h2>
-          <p>
-            We believe trust is the foundation of every successful career
-            journey. That’s why JobCareerPoint focuses on verified job listings,
-            transparent communication, and direct interaction with employers.
-          </p>
+        <section className="about-section trust-section">
+          <div className="section-header">
+            <h2 className="section-title">Building Trust & Credibility</h2>
+            <div className="title-underline"></div>
+          </div>
+          <div className="trust-content">
+            <p>
+              Trust is the cornerstone of every successful career journey. At
+              <strong> JobCareerPoint</strong>, we've built our reputation on
+              transparency, reliability, and exceptional service. Our commitment
+              to ethical recruitment practices ensures that every interaction
+              adds value to your career progression.
+            </p>
+            <div className="trust-points">
+              <div className="trust-item">
+                <span className="check-icon">✅</span>
+                <span>Government compliance certified</span>
+              </div>
+              <div className="trust-item">
+                <span className="check-icon">✅</span>
+                <span>Zero attrition with partnered companies</span>
+              </div>
+              <div className="trust-item">
+                <span className="check-icon">✅</span>
+                <span>Data privacy and security assured</span>
+              </div>
+            </div>
+          </div>
         </section>
 
         {/* Why Trust Us */}
-        <section className="about-section">
-          <h2>Why Trust Us?</h2>
-          <div className="why-trust">
-            <div className="about-card">
-              <h3>✔ Verified Jobs</h3>
+        <section className="about-section why-trust-section">
+          <div className="section-header">
+            <h2 className="section-title">Why Choose JobCareerPoint?</h2>
+            <div className="title-underline"></div>
+          </div>
+          <div className="why-trust-grid">
+            <div className="feature-card">
+              <div className="feature-icon">✔</div>
+              <h3>Verified Job Listings</h3>
               <p>
-                Every job listing is reviewed to avoid fake or misleading
-                offers.
+                Every opportunity is thoroughly vetted to ensure authenticity
+                and eliminate fake or misleading offers.
               </p>
             </div>
 
-            <div className="about-card">
-              <h3>⚡ Quick Applications</h3>
+            <div className="feature-card">
+              <div className="feature-icon">⚡</div>
+              <h3>Rapid Application Process</h3>
               <p>
-                Apply easily and connect directly with recruiters via WhatsApp.
+                Apply with a single click and connect directly with recruiters
+                through integrated WhatsApp communication.
               </p>
             </div>
 
-            <div className="about-card">
-              <h3>🔒 Secure & Transparent</h3>
+            <div className="feature-card">
+              <div className="feature-icon">🔒</div>
+              <h3>Secure & Confidential</h3>
               <p>
-                Your information is safe and used only for job-related purposes.
+                Your personal information is protected with enterprise-grade
+                security and used exclusively for legitimate recruitment
+                purposes.
               </p>
             </div>
 
-            <div className="about-card">
-              <h3>🤝 Career Support</h3>
-              <p>We guide job seekers at every step of their career journey.</p>
+            <div className="feature-card">
+              <div className="feature-icon">🤝</div>
+              <h3>End-to-End Support</h3>
+              <p>
+                From resume building to interview preparation and offer
+                negotiation, we guide you at every step.
+              </p>
+            </div>
+
+            <div className="feature-card">
+              <div className="feature-icon">🎯</div>
+              <h3>Industry Expertise</h3>
+              <p>
+                Our consultants bring deep industry knowledge across sectors
+                including IT, Manufacturing, FMCG, and Services.
+              </p>
+            </div>
+
+            <div className="feature-card">
+              <div className="feature-icon">📈</div>
+              <h3>Career Growth Focus</h3>
+              <p>
+                We don't just find you a job; we help build sustainable careers
+                with long-term growth potential.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="about-section cta-section">
+          <div className="cta-content">
+            <h2>Ready to Transform Your Career?</h2>
+            <p>
+              Join thousands of successful professionals who've found their
+              dream jobs through JobCareerPoint.
+            </p>
+            <div className="cta-buttons">
+              <a href="/jobs" className="btn cta-button secondary">
+                Browse Jobs
+              </a>
             </div>
           </div>
         </section>
