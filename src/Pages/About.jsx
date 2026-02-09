@@ -48,7 +48,7 @@ const About = () => {
                 Our journey began with a simple vision: to transform the way
                 recruitment works in India. Today, we stand as one of the most
                 reliable placement agencies, having successfully placed
-                <span className="highlight-text"> 2,000+ candidates </span>
+                <span className="highlight-text"> 7,000+ candidates </span>
                 in reputed organizations nationwide.
               </p>
               <div className="stats-container">

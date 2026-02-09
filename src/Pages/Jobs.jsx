@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../Styling/Jobs.css';
 
@@ -757,8 +757,8 @@ export default function Jobs() {
   // ⭐ NEW STATE
   const [visibleCount, setVisibleCount] = useState(8);
 
-  // Flatten jobs
-  const allJobs = data.flatMap((cat) =>
+  // Flatten jobs 
+  const allJobs = data.flatMap((cat) => 
     cat.jobs.map((job) => ({
       ...job,
       category: cat.title,
@@ -773,11 +773,6 @@ export default function Jobs() {
       (!experience || job.experience === experience)
     );
   });
-
-  // ⭐ RESET visible count when filter changes
-  useEffect(() => {
-    setVisibleCount(8);
-  }, [category, location, experience]);
 
   // ⭐ SHOW ONLY LIMITED JOBS
   const visibleJobs = filtered.slice(0, visibleCount);

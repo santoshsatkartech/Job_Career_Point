@@ -1,6 +1,40 @@
 import { useEffect, useRef } from 'react';
 import '../Styling/particle.css';
 
+
+// ✅ Move class OUTSIDE component
+class Particle {
+  constructor(width, height, ctx, color) {
+    this.ctx = ctx;
+    this.color = color;
+
+    this.x = Math.random() * width;
+    this.y = Math.random() * height;
+    this.vx = (Math.random() - 0.5) * 0.6;
+    this.vy = (Math.random() - 0.5) * 0.6;
+    this.radius = 1.6;
+  }
+
+  draw() {
+    this.ctx.beginPath();
+    this.ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+    this.ctx.fillStyle = `rgba(${this.color},0.35)`;
+    this.ctx.fill();
+  }
+
+  update(width, height) {
+    this.x += this.vx;
+    this.y += this.vy;
+
+    if (this.x < 0 || this.x > width) this.vx *= -1;
+    if (this.y < 0 || this.y > height) this.vy *= -1;
+
+    this.draw();
+  }
+}
+
+
+
 const Particles = () => {
   const canvasRef = useRef(null);
 
@@ -13,50 +47,27 @@ const Particles = () => {
 
     const mouse = { x: null, y: null };
 
-    window.addEventListener('mousemove', (e) => {
+    // ✅ Save handlers for cleanup
+    const handleMouseMove = (e) => {
       mouse.x = e.x;
       mouse.y = e.y;
-    });
+    };
 
-    window.addEventListener('resize', () => {
+    const handleResize = () => {
       width = canvas.width = window.innerWidth;
       height = canvas.height = window.innerHeight;
-    });
+    };
 
-    const COLOR = '1, 4, 71'; // #010447
+    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('resize', handleResize);
+
+    const COLOR = '1, 4, 71';
     const PARTICLE_COUNT = 90;
     const MAX_DISTANCE = 120;
 
-    class Particle {
-      constructor() {
-        this.x = Math.random() * width;
-        this.y = Math.random() * height;
-        this.vx = (Math.random() - 0.5) * 0.6;
-        this.vy = (Math.random() - 0.5) * 0.6;
-        this.radius = 1.6;
-      }
-
-      draw() {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${COLOR}, 0.35)`;
-        ctx.fill();
-      }
-
-      update() {
-        this.x += this.vx;
-        this.y += this.vy;
-
-        if (this.x < 0 || this.x > width) this.vx *= -1;
-        if (this.y < 0 || this.y > height) this.vy *= -1;
-
-        this.draw();
-      }
-    }
-
     const particles = [];
     for (let i = 0; i < PARTICLE_COUNT; i++) {
-      particles.push(new Particle());
+      particles.push(new Particle(width, height, ctx, COLOR));
     }
 
     const connectParticles = () => {
@@ -79,19 +90,24 @@ const Particles = () => {
       }
     };
 
+    let animationId;
+
     const animate = () => {
       ctx.clearRect(0, 0, width, height);
-      particles.forEach((p) => p.update());
+      particles.forEach((p) => p.update(width, height));
       connectParticles();
-      requestAnimationFrame(animate);
+      animationId = requestAnimationFrame(animate);
     };
 
     animate();
 
+    // ✅ Proper Cleanup
     return () => {
-      window.removeEventListener('mousemove', () => {});
-      window.removeEventListener('resize', () => {});
+      cancelAnimationFrame(animationId);
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('resize', handleResize);
     };
+
   }, []);
 
   return (
