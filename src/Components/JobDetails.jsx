@@ -126,7 +126,6 @@ ${formData.fullName}
       return;
     }
 
-    // Check if resume is selected
     if (!resumeFile) {
       const proceed = window.confirm(
         `⚠️ No resume attached!\n\n` +
@@ -139,8 +138,6 @@ ${formData.fullName}
 
       if (!proceed) return;
     }
-
-    // WhatsApp number (replace with your actual number)
     const whatsappNumber = '918999112057';
 
     // Create WhatsApp URL

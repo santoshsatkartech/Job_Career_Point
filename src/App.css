@@ -20,3 +20,8 @@ img,
 video {
   object-fit: cover;
 }
+
+#root {
+  width: 100%;
+  overflow: hidden;
+}
