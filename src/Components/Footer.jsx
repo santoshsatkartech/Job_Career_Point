@@ -46,12 +46,6 @@ const Footer = () => {
               <li>
                 <a href="/contact">Contact Us</a>
               </li>
-              <li>
-                <a href="/privacy">Privacy Policy</a>
-              </li>
-              <li>
-                <a href="/terms">Terms & Conditions</a>
-              </li>
             </ul>
           </div>
 
@@ -177,13 +171,6 @@ const Footer = () => {
               © {new Date().getFullYear()} Job Career Point. All rights
               reserved.
             </p>
-            <div className="bottom-links">
-              <a href="/privacy">Privacy</a>
-              <span className="separator">•</span>
-              <a href="/terms">Terms</a>
-              <span className="separator">•</span>
-              <a href="/sitemap">Sitemap</a>
-            </div>
           </div>
         </div>
       </div>
